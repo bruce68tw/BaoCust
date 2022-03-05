@@ -1,0 +1,47 @@
+﻿<!-- 1.load js -->
+<script src="~/js/view/Bao.js"></script>
+<script type="text/javascript">
+    $(function () {
+        _me.init();
+    });
+</script>
+
+@await Component.InvokeAsync("XgProgPath", new { names = new string[] { "尋寶資料維護" } })
+<div class="xp-prog">
+    <div id="divRead">
+        <!-- 2.查詢條件欄位 -->
+		<form id='formRead' class='xg-form'>
+			<div class="row">
+				@await Component.InvokeAsync("XiText", new XiTextDto{ Title = "尋寶名稱", Fid = "Name", MaxLen = 100, InRow = true })
+				@await Component.InvokeAsync("XgFindTbar", new XgFindTbarDto{  })
+			</div>
+        </form>
+
+		<div class='xg-btns-box'>
+			@await Component.InvokeAsync("XgCreate")
+        </div>
+        <table id="tableRead" class="table table-bordered xg-table" cellspacing="0">
+            <thead>
+                <!-- 3.查詢結果標題 -->
+                <tr>
+					<th>尋寶名稱</th>
+					<th>開始時間</th>
+					<th>結束時間</th>
+					<th>是否批次解謎</th>
+					<th>是否移動地點</th>
+					<th>是否獎金</th>
+					<th>獎品內容</th>
+					<th>關卡數目</th>
+					<th>維護</th>
+                </tr>
+            </thead>
+            <!-- 4.查詢結果資料 -->
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- 5.編輯畫面 -->
+    <div id="divEdit" class="xg-hide">
+        <partial name="Edit" />
+    </div>
+</div>

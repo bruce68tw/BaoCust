@@ -1,0 +1,17 @@
+﻿<script src="~/js/view/ChartDaily.js"></script>
+<script type="text/javascript">
+    $(function () {
+        _me.init();
+    });
+</script>
+
+@await Component.InvokeAsync("XgProgPath", new { names = new string[] { "每日報名統計" } })
+<div class="xp-prog">
+    <div id="divRead">
+        <form id='formRead' class='xg-form'>
+            @await Component.InvokeAsync("XiSelect", new XiSelectDto { Title = "尋寶遊戲", Fid = "BaoId", Rows = (List<IdStrDto>)ViewBag.Baos, FnOnChange = "_me.onItem()" })
+        </form>
+
+        <canvas id="chart" width="800" height="450"></canvas>
+    </div>
+</div>

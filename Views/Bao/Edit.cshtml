@@ -1,0 +1,53 @@
+﻿<form id='eform' class='xg-form'>
+    @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "Id" })
+
+    @await Component.InvokeAsync("XiText", new XiTextDto { Title = "尋寶名稱", Fid = "Name", MaxLen = 100, Required = true })
+    @await Component.InvokeAsync("XiDt", new XiDtDto { Title = "開始時間", Fid = "StartTime", Required = true, Cols = "2,4" })
+    @await Component.InvokeAsync("XiDt", new XiDtDto { Title = "結束時間", Fid = "EndTime", Required = true, Cols = "2,4" })
+    @await Component.InvokeAsync("XiCheck", new XiCheckDto { Title = "資料狀態", Fid = "Status", Label = "啟用" })
+    @await Component.InvokeAsync("XiCheck", new XiCheckDto { Title = "是否批次解謎", Fid = "IsBatch", Label = "是" })
+    @await Component.InvokeAsync("XiCheck", new XiCheckDto { Title = "是否移動地點", Fid = "IsMove", Label = "是" })
+    @await Component.InvokeAsync("XiCheck", new XiCheckDto { Title = "是否獎金", Fid = "IsMoney", Label = "是" })
+    @await Component.InvokeAsync("XiText", new XiTextDto { Title = "獎品內容", Fid = "GiftName", MaxLen = 100, Required = true })
+    @await Component.InvokeAsync("XiTextarea", new XiTextareaDto { Title = "注意事項", Fid = "Note", MaxLen = 500, Cols = "2,6" })
+    @await Component.InvokeAsync("XiRead", new XiReadDto { Title = "關卡數目", Fid = "StageCount", SaveDb = true })
+    @await Component.InvokeAsync("XiRead", new XiReadDto { Title = "異動日期", Fid = "Revised" })
+</form>
+
+<div class='xg-btns-box'>
+	<span class="xg-block-label">尋寶關卡</span>
+	@await Component.InvokeAsync("XgAddRow", "_me.mStage.onAddRow()")
+</div>
+<form id='eformStage' class='xg-form' style="border:none;">
+    <table class="table table-bordered xg-table xg-no-hline" cellspacing="0">
+        <thead>
+            <tr>
+                @await Component.InvokeAsync("XgTh", new XgThDto { Title = "上傳題目圖檔", Required = true })
+                @await Component.InvokeAsync("XgTh", new XgThDto { Title = "手機App提示", Tip = "顯示在手機App上面的提示" })
+                @await Component.InvokeAsync("XgTh", new XgThDto { Title = "管理人員提示", Tip = "給管理人員的答案提示",  Required = true })
+                @await Component.InvokeAsync("XgTh", new XgThDto { Title = "答案", Required = true })
+                <th>功能</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tbodyStage"></tbody>
+    </table>
+</form>
+
+@await Component.InvokeAsync("XgSaveBack")
+
+<script id="tplStage" type="text/template">
+    <tr>
+        @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "Id" })
+        @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "BaoId" })
+        @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "Sort" })
+
+        <td>@await Component.InvokeAsync("XiFile", new XiFileDto { Fid = "FileName", Required = true })</td>
+        <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "AppHint", MaxLen = 100 })</td>
+        <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "CustHint", MaxLen = 100,  Required = true })</td>
+        <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "Answer", MaxLen = 100, Required = true, IsPwd = true })</td>
+        <td width='100px' class='text-center'><a href="javascript:_me.onTestAns(this);">測試答案</a></td>
+        <td width='100px' class='text-center'>@await Component.InvokeAsync("XgDeleteUpDown", new { mName = "_me.mStage" })</td>
+    </tr>
+</script>
+

@@ -1,0 +1,201 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>3b0e1b5c-c583-43d6-a792-329458bf8dd9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot_old2\**" />
+    <Compile Remove="wwwroot_old\**" />
+    <Compile Remove="_data\**" />
+    <Compile Remove="_log\**" />
+    <Compile Remove="_source_old\**" />
+    <Compile Remove="_sql\**" />
+    <Compile Remove="_temp\**" />
+    <Compile Remove="_upload\**" />
+    <Content Remove="wwwroot_old2\**" />
+    <Content Remove="wwwroot_old\**" />
+    <Content Remove="_data\**" />
+    <Content Remove="_log\**" />
+    <Content Remove="_source_old\**" />
+    <Content Remove="_sql\**" />
+    <Content Remove="_temp\**" />
+    <Content Remove="_upload\**" />
+    <EmbeddedResource Remove="wwwroot_old2\**" />
+    <EmbeddedResource Remove="wwwroot_old\**" />
+    <EmbeddedResource Remove="_data\**" />
+    <EmbeddedResource Remove="_log\**" />
+    <EmbeddedResource Remove="_source_old\**" />
+    <EmbeddedResource Remove="_sql\**" />
+    <EmbeddedResource Remove="_temp\**" />
+    <EmbeddedResource Remove="_upload\**" />
+    <None Remove="wwwroot_old2\**" />
+    <None Remove="wwwroot_old\**" />
+    <None Remove="_data\**" />
+    <None Remove="_log\**" />
+    <None Remove="_source_old\**" />
+    <None Remove="_sql\**" />
+    <None Remove="_temp\**" />
+    <None Remove="_upload\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\UserEdit - 複製.cs" />
+    <Compile Remove="Services\UserRead - 複製.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\CustInputController.cs%281%29" />
+    <None Remove="Controllers\CustInputController.cs%282%29" />
+    <None Remove="Controllers\MyController.cs_old" />
+    <None Remove="Controllers\UserController.cs%281%29" />
+    <None Remove="Controllers\UserController.cs%282%29" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Base\BaseWeb\BaseWeb.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\lib\jsPlumb_old\external\" />
+    <Folder Include="wwwroot\css\lib\old\" />
+    <Folder Include="wwwroot\image\CustInput\" />
+    <Folder Include="_template\en-US\" />
+    <Folder Include="_template\zh-CN\" />
+    <Folder Include="_template\zh-TW\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Bao\Edit.cshtml" />
+    <None Include="Views\Bao\Read.cshtml" />
+    <None Include="Views\ChartAttend\Index.cshtml" />
+    <None Include="Views\ChartDaily\Index.cshtml" />
+    <None Include="Views\Home\Error.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Login.cshtml" />
+    <None Include="Views\SetPwd\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\NoProgAuth.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Top.cshtml" />
+    <None Include="Views\UserCust\Edit.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\css\base\fontAwesome.c_old" />
+    <None Include="wwwroot\css\bootstrap-datepicker.css.map" />
+    <None Include="wwwroot\css\fonts\icomoon.svg" />
+    <None Include="wwwroot\css\lib\font\summernote.woff2" />
+    <None Include="wwwroot\css\lib\jsplumbtoolkit-defaults-2.15.6.c_old" />
+    <None Include="wwwroot\css\lib\summernote-bs4-0.8.18.c_old" />
+    <None Include="wwwroot\css\summernote-bs4.js.map" />
+    <None Include="wwwroot\css\summernote-bs4.min.js.map" />
+    <None Include="wwwroot\css\view\_xg_block.css_old" />
+    <None Include="wwwroot\font\summernote.woff2" />
+    <None Include="wwwroot\js\base\Datatable.js" />
+    <None Include="wwwroot\js\base\EditMany.js" />
+    <None Include="wwwroot\js\base\EditOne.js" />
+    <None Include="wwwroot\js\base\Flow.js" />
+    <None Include="wwwroot\js\base\_ajax.js" />
+    <None Include="wwwroot\js\base\_ajax.js.bak" />
+    <None Include="wwwroot\js\base\_array.js" />
+    <None Include="wwwroot\js\base\_assert.js" />
+    <None Include="wwwroot\js\base\_browser.js" />
+    <None Include="wwwroot\js\base\_btn.js" />
+    <None Include="wwwroot\js\base\_chart.js" />
+    <None Include="wwwroot\js\base\_crud.js" />
+    <None Include="wwwroot\js\base\_date.js" />
+    <None Include="wwwroot\js\base\_edit.js" />
+    <None Include="wwwroot\js\base\_error.js" />
+    <None Include="wwwroot\js\base\_file.js" />
+    <None Include="wwwroot\js\base\_form.js" />
+    <None Include="wwwroot\js\base\_formData.js" />
+    <None Include="wwwroot\js\base\_fun.js" />
+    <None Include="wwwroot\js\base\_helper.js" />
+    <None Include="wwwroot\js\base\_html.js" />
+    <None Include="wwwroot\js\base\_ibase.js" />
+    <None Include="wwwroot\js\base\_icheck.js" />
+    <None Include="wwwroot\js\base\_icolor.js" />
+    <None Include="wwwroot\js\base\_idate.js" />
+    <None Include="wwwroot\js\base\_idt.js" />
+    <None Include="wwwroot\js\base\_ifile.js" />
+    <None Include="wwwroot\js\base\_ihtml.js" />
+    <None Include="wwwroot\js\base\_ilink.js" />
+    <None Include="wwwroot\js\base\_input.js" />
+    <None Include="wwwroot\js\base\_iradio.js" />
+    <None Include="wwwroot\js\base\_iread.js" />
+    <None Include="wwwroot\js\base\_iselect.js" />
+    <None Include="wwwroot\js\base\_itext.js" />
+    <None Include="wwwroot\js\base\_itextarea.js" />
+    <None Include="wwwroot\js\base\_json.js" />
+    <None Include="wwwroot\js\base\_leftmenu.js" />
+    <None Include="wwwroot\js\base\_locale.js" />
+    <None Include="wwwroot\js\base\_log.js" />
+    <None Include="wwwroot\js\base\_modal.js" />
+    <None Include="wwwroot\js\base\_nav.js" />
+    <None Include="wwwroot\js\base\_num.js" />
+    <None Include="wwwroot\js\base\_obj.js" />
+    <None Include="wwwroot\js\base\_pjax.js" />
+    <None Include="wwwroot\js\base\_prog.js" />
+    <None Include="wwwroot\js\base\_qrcode.js" />
+    <None Include="wwwroot\js\base\_str.js" />
+    <None Include="wwwroot\js\base\_switch.js" />
+    <None Include="wwwroot\js\base\_tab.js" />
+    <None Include="wwwroot\js\base\_table.js" />
+    <None Include="wwwroot\js\base\_tool.js" />
+    <None Include="wwwroot\js\base\_valid.js" />
+    <None Include="wwwroot\js\base\_var.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\en-US.js" />
+    <None Include="wwwroot\js\en-US.min.js" />
+    <None Include="wwwroot\js\lib.js" />
+    <None Include="wwwroot\js\lib\bootstrap-datepicker-1.9.js" />
+    <None Include="wwwroot\js\lib\bootstrap.bundle-4.4.1.js" />
+    <None Include="wwwroot\js\lib\dataTables.bootstrap4-1.10.19.js" />
+    <None Include="wwwroot\js\lib\jquery-3.4.1.js" />
+    <None Include="wwwroot\js\lib\jquery.blockUI-2.7.js" />
+    <None Include="wwwroot\js\lib\jquery.dataTables-1.10.19.js" />
+    <None Include="wwwroot\js\lib\jquery.pjax-2.0.1-bruce.js" />
+    <None Include="wwwroot\js\lib\jquery.validate-1.19.3-bruce.js" />
+    <None Include="wwwroot\js\lib\jquery.validate.unobtrusive-3.2.11.js" />
+    <None Include="wwwroot\js\lib\jsplumb-2.15.6.js" />
+    <None Include="wwwroot\js\lib\jsplumb-2.15.6.min.js" />
+    <None Include="wwwroot\js\lib\modernizr-2.8.3.js" />
+    <None Include="wwwroot\js\lib\moment-2.24.js" />
+    <None Include="wwwroot\js\lib\mustache-3.1.js" />
+    <None Include="wwwroot\js\lib\summernote-bs4-0.8.18.js" />
+    <None Include="wwwroot\js\my.js" />
+    <None Include="wwwroot\js\my.min.js" />
+    <None Include="wwwroot\js\summernote-bs4.js.map" />
+    <None Include="wwwroot\js\summernote-bs4.min.js.map" />
+    <None Include="wwwroot\js\view\Bao.js" />
+    <None Include="wwwroot\js\view\ChartAttend.js" />
+    <None Include="wwwroot\js\view\ChartDaily.js" />
+    <None Include="wwwroot\js\view\UserCust.js" />
+    <None Include="wwwroot\js\view\_xp.js" />
+    <None Include="wwwroot\js\zh-CN.js" />
+    <None Include="wwwroot\js\zh-CN.min.js" />
+    <None Include="wwwroot\js\zh-TW.js" />
+    <None Include="wwwroot\js\zh-TW.min.js" />
+    <None Include="wwwroot\locale\en-US\bootstrap-datepicker.js" />
+    <None Include="wwwroot\locale\en-US\validate.j_old" />
+    <None Include="wwwroot\locale\en-US\_BR.js" />
+    <None Include="wwwroot\locale\zh-CN\bootstrap-datepicker.js" />
+    <None Include="wwwroot\locale\zh-CN\validate.js" />
+    <None Include="wwwroot\locale\zh-CN\_BR.js" />
+    <None Include="wwwroot\locale\zh-TW\bootstrap-datepicker.js" />
+    <None Include="wwwroot\locale\zh-TW\validate.js" />
+    <None Include="wwwroot\locale\zh-TW\_BR.js" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties bundleconfig_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

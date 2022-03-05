@@ -1,0 +1,22 @@
+﻿<script src="~/js/view/UserCust.js"></script>
+<script type="text/javascript">
+    $(function () {
+        _me.init();
+    });
+</script>
+
+@await Component.InvokeAsync("XgProgPath", new { names = new string[] { "基本資料維護" } })
+<div class="xp-prog">
+    <div id="divEdit">
+        <form id='eform' class='xg-form'>
+            @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "Id" })
+
+            @await Component.InvokeAsync("XiText", new XiTextDto { Title = "姓名", Fid = "Name", Required = true,  MaxLen = 30 })
+            @await Component.InvokeAsync("XiText", new XiTextDto { Title = "帳號", Fid = "Account", Required = true, MaxLen = 30 })
+            @await Component.InvokeAsync("XiText", new XiTextDto { Title = "電話", Fid = "Phone", Required = true, MaxLen = 15 })
+            @await Component.InvokeAsync("XiText", new XiTextDto { Title = "Email", Fid = "Email", Required = true, MaxLen = 50 })
+        </form>
+
+        @await Component.InvokeAsync("XgSave")
+    </div>
+</div>
