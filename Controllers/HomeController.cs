@@ -85,7 +85,7 @@ and Status=1
                 //DeptName = "",
                 Locale = _Fun.Config.Locale,
                 //ProgAuthStrs = "",
-                IsLogin = true,
+                //IsLogin = true,
                 UserType = userType,
             };
             #endregion
