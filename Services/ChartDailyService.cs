@@ -42,7 +42,7 @@ from result a
                 "StartDate", today.AddMonths(-1).AddDays(1),
                 "EndDate", today,
             };
-            return await _Db.GetModelsAsync<IdNumDto>(sql, args);
+            return await _Db.GetModelsA<IdNumDto>(sql, args);
         }
     }
 }

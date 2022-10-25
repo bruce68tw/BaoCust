@@ -29,7 +29,7 @@ set Pwd='{_Str.Md5(newPwd)}'
 where Id='{_Fun.UserId()}'
 and Pwd=@Pwd
 ";
-            return (await _Db.ExecSqlAsync(sql, new List<object>() { "Pwd", oldPwd }) == 1)
+            return (await _Db.ExecSqlA(sql, new List<object>() { "Pwd", oldPwd }) == 1)
                 ? ""
                 : "舊密碼輸入錯誤。";
         }

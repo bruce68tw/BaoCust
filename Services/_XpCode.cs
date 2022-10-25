@@ -18,15 +18,15 @@ select
 from dbo.Bao
 where Creator='{_Fun.UserId()}'
 order by Id");
-            return await SqlToListAsync(sql, db);
+            return await _Db.SqlToCodesA(sql, db);
 
         }
         #endregion
 
         #region get from XpCode table
-        public static async Task<List<IdStrDto>> GetAuthRangesAsync(string locale, Db db = null)
+        public static async Task<List<IdStrDto>> GetAuthRangesA(string locale, Db db = null)
         {
-            return await TypeToListAsync(locale, "AuthRange", db);
+            return await TypeToListA(locale, "AuthRange", db);
         }
         #endregion
 
@@ -42,7 +42,7 @@ order by Id");
         */
         #endregion
 
-        private static async Task<List<IdStrDto>> TableToListAsync(string table, Db db = null)
+        private static async Task<List<IdStrDto>> TableToListA(string table, Db db = null)
         {
             //var userId = _Fun.GetBaseUser().UserId;
             var sql = string.Format($@"
@@ -51,22 +51,24 @@ select
 from dbo.[{table}]
 where Creator='{_Fun.UserId()}'
 order by Id");
-            return await SqlToListAsync(sql, db);
+            return await _Db.SqlToCodesA(sql, db);
         }
 
+        /*
         //get codes from sql 
         private static async Task<List<IdStrDto>> SqlToListAsync(string sql, Db db = null)
         {
             var emptyDb = false;
             _Fun.CheckOpenDb(ref db, ref emptyDb);
 
-            var rows = await db.GetModelsAsync<IdStrDto>(sql);
-            await _Fun.CheckCloseDb(db, emptyDb);
+            var rows = await db.GetModelsA<IdStrDto>(sql);
+            await _Fun.CheckCloseDbA(db, emptyDb);
             return rows;
         }
+        */
 
         //get code table rows
-        private static async Task<List<IdStrDto>> TypeToListAsync(string locale, string type, Db db = null)
+        private static async Task<List<IdStrDto>> TypeToListA(string locale, string type, Db db = null)
         {
             var sql = $@"
 select 
@@ -74,7 +76,7 @@ select
 from dbo.XpCode
 where Type='{type}'
 order by Sort";
-            return await SqlToListAsync(sql, db);           
+            return await _Db.SqlToCodesA(sql, db);           
         }
         /*
         public static string GetValue(XpCode row, string locale)

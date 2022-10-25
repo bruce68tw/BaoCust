@@ -57,7 +57,7 @@ and Status=1
             #region compare input
             var status = false;
             var hasPwd = !_Str.IsEmpty(vo.Pwd);
-            var row = await _Db.GetJsonAsync(sql, new List<object>() { "Account", vo.Account });
+            var row = await _Db.GetJsonA(sql, new List<object>() { "Account", vo.Account });
             if (row != null)
             {
                 var dbPwd = row["Pwd"].ToString();

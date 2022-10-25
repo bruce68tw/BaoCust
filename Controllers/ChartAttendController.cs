@@ -16,7 +16,6 @@ namespace BaoCust.Controllers
             return View();
         }
 
-        //id: Bao.Id
         [HttpPost]
         public async Task<List<IdNumDto>> GetData()
         {
@@ -31,7 +30,7 @@ select
 from dbo.Bao b
 where b.Creator='{_Fun.UserId()}'
 ";
-            return await _Db.GetModelsAsync<IdNumDto>(sql);
+            return await _Db.GetModelsA<IdNumDto>(sql);
         }
 
     }//class

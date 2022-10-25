@@ -23,13 +23,13 @@ namespace BaoCust.Controllers
         [HttpPost]
         public async Task<ContentResult> GetUpdJson(string key)
         {
-            return JsonToCnt(await EditService().GetUpdJsonAsync(_Fun.UserId()));
+            return JsonToCnt(await EditService().GetUpdJsonA(_Fun.UserId()));
         }
 
         [HttpPost]
         public async Task<JsonResult> Update(string key, string json)
         {
-            return Json(await EditService().UpdateAsync(_Fun.UserId(), _Str.ToJson(json)));
+            return Json(await EditService().UpdateA(_Fun.UserId(), _Str.ToJson(json)));
         }
 
     }//class

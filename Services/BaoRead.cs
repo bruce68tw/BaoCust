@@ -22,7 +22,7 @@ order by Id
 
         public async Task<JObject> GetPage(string ctrl, DtDto dt)
         {
-            return await new CrudRead().GetPageAsync(dto, dt, ctrl);
+            return await new CrudRead().GetPageA(dto, dt, ctrl);
         }
 
     } //class

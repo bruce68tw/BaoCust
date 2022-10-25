@@ -78,7 +78,7 @@ namespace BaoCust
             _Fun.Init(env.IsDevelopment(), app.ApplicationServices, DbTypeEnum.MSSql);
 
             //2.set default locale
-            _Locale.SetCultureAsync(_Fun.Config.Locale);
+            _Locale.SetCultureA(_Fun.Config.Locale);
 
             //3.exception handle
             if (env.IsDevelopment())

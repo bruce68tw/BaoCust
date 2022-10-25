@@ -69,9 +69,9 @@ namespace BaoCust.Services
         {
             var service = EditService();
             Md5Answer(json);
-            var result = await service.CreateAsync(json);
+            var result = await service.CreateA(json);
             if (_Valid.ResultStatus(result))
-                await _WebFile.SaveCrudFilesAsnyc(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
+                await _WebFile.SaveCrudFilesA(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
             return result;
         }
 
@@ -81,9 +81,9 @@ namespace BaoCust.Services
         {
             var service = EditService();
             Md5Answer(json);
-            var result = await service.UpdateAsync(key, json);
+            var result = await service.UpdateA(key, json);
             if (_Valid.ResultStatus(result))
-                await _WebFile.SaveCrudFilesAsnyc(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
+                await _WebFile.SaveCrudFilesA(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
             return result;
         }
 
