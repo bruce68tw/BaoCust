@@ -30,13 +30,13 @@ var _chart = {
             ids[i] = row.Id;
             values[i] = row.Num;
         }
-        _chart._drawLine(canvasId, ids, values, color);
+        _chart.drawLine(canvasId, ids, values, color);
     },
 
     /**
      * show one line chart, called Chart.js
      */ 
-    _drawLine: function (canvasId, ids, values, color) {
+    drawLine: function (canvasId, ids, values, color) {
         if (_chart._nowChart != null)
             _chart._nowChart.destroy();
 

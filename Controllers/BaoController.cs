@@ -70,5 +70,14 @@ namespace BaoCust.Controllers
             return Json(await EditService().DeleteA(key));
         }
 
+        //檢查答案
+        [HttpPost]
+        public async Task<string> CheckAnswer(string id, string input)
+        {
+            var sql = @"select Answer from dbo.BaoStage where Id=@Id";
+            var data = await _Db.GetStrA(sql, new() { "Id", id });
+            return (data == _Str.Md5(input)) ? "1" : "0";
+        }
+
     }//class
 }

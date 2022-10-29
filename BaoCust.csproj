@@ -12,6 +12,7 @@
     <Compile Remove="_log\**" />
     <Compile Remove="_source_old\**" />
     <Compile Remove="_sql\**" />
+    <Compile Remove="_template\**" />
     <Compile Remove="_temp\**" />
     <Compile Remove="_upload\**" />
     <Content Remove="wwwroot_old2\**" />
@@ -20,6 +21,7 @@
     <Content Remove="_log\**" />
     <Content Remove="_source_old\**" />
     <Content Remove="_sql\**" />
+    <Content Remove="_template\**" />
     <Content Remove="_temp\**" />
     <Content Remove="_upload\**" />
     <EmbeddedResource Remove="wwwroot_old2\**" />
@@ -28,6 +30,7 @@
     <EmbeddedResource Remove="_log\**" />
     <EmbeddedResource Remove="_source_old\**" />
     <EmbeddedResource Remove="_sql\**" />
+    <EmbeddedResource Remove="_template\**" />
     <EmbeddedResource Remove="_temp\**" />
     <EmbeddedResource Remove="_upload\**" />
     <None Remove="wwwroot_old2\**" />
@@ -36,6 +39,7 @@
     <None Remove="_log\**" />
     <None Remove="_source_old\**" />
     <None Remove="_sql\**" />
+    <None Remove="_template\**" />
     <None Remove="_temp\**" />
     <None Remove="_upload\**" />
   </ItemGroup>
@@ -66,15 +70,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\lib\jsPlumb_old\external\" />
-    <Folder Include="wwwroot\css\lib\old\" />
-    <Folder Include="wwwroot\image\CustInput\" />
-    <Folder Include="_template\en-US\" />
-    <Folder Include="_template\zh-CN\" />
-    <Folder Include="_template\zh-TW\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Views\Bao\Edit.cshtml" />
     <None Include="Views\Bao\Read.cshtml" />
     <None Include="Views\ChartAttend\Index.cshtml" />
@@ -90,28 +85,21 @@
     <None Include="Views\UserCust\Edit.cshtml" />
     <None Include="Views\_ViewImports.cshtml" />
     <None Include="Views\_ViewStart.cshtml" />
-    <None Include="wwwroot\css\base\fontAwesome.c_old" />
-    <None Include="wwwroot\css\bootstrap-datepicker.css.map" />
     <None Include="wwwroot\css\fonts\icomoon.svg" />
-    <None Include="wwwroot\css\lib\font\summernote.woff2" />
-    <None Include="wwwroot\css\lib\jsplumbtoolkit-defaults-2.15.6.c_old" />
-    <None Include="wwwroot\css\lib\summernote-bs4-0.8.18.c_old" />
-    <None Include="wwwroot\css\summernote-bs4.js.map" />
-    <None Include="wwwroot\css\summernote-bs4.min.js.map" />
     <None Include="wwwroot\css\view\_xg_block.css_old" />
-    <None Include="wwwroot\font\summernote.woff2" />
     <None Include="wwwroot\js\base\Datatable.js" />
     <None Include="wwwroot\js\base\EditMany.js" />
     <None Include="wwwroot\js\base\EditOne.js" />
     <None Include="wwwroot\js\base\Flow.js" />
+    <None Include="wwwroot\js\base\Page.js" />
     <None Include="wwwroot\js\base\_ajax.js" />
-    <None Include="wwwroot\js\base\_ajax.js.bak" />
     <None Include="wwwroot\js\base\_array.js" />
     <None Include="wwwroot\js\base\_assert.js" />
     <None Include="wwwroot\js\base\_browser.js" />
     <None Include="wwwroot\js\base\_btn.js" />
     <None Include="wwwroot\js\base\_chart.js" />
-    <None Include="wwwroot\js\base\_crud.js" />
+    <None Include="wwwroot\js\base\_crudE.js" />
+    <None Include="wwwroot\js\base\_crudR.js" />
     <None Include="wwwroot\js\base\_date.js" />
     <None Include="wwwroot\js\base\_edit.js" />
     <None Include="wwwroot\js\base\_error.js" />
@@ -150,6 +138,7 @@
     <None Include="wwwroot\js\base\_switch.js" />
     <None Include="wwwroot\js\base\_tab.js" />
     <None Include="wwwroot\js\base\_table.js" />
+    <None Include="wwwroot\js\base\_temp.js" />
     <None Include="wwwroot\js\base\_tool.js" />
     <None Include="wwwroot\js\base\_valid.js" />
     <None Include="wwwroot\js\base\_var.js" />
@@ -157,21 +146,24 @@
     <None Include="wwwroot\js\en-US.js" />
     <None Include="wwwroot\js\en-US.min.js" />
     <None Include="wwwroot\js\lib.js" />
+    <None Include="wwwroot\js\lib.min.js" />
     <None Include="wwwroot\js\lib\bootstrap-datepicker-1.9.js" />
-    <None Include="wwwroot\js\lib\bootstrap.bundle-4.4.1.js" />
-    <None Include="wwwroot\js\lib\dataTables.bootstrap4-1.10.19.js" />
-    <None Include="wwwroot\js\lib\jquery-3.4.1.js" />
+    <None Include="wwwroot\js\lib\bootstrap.bundle-5.1.3.js" />
+    <None Include="wwwroot\js\lib\bootstrap.bundle-5.1.3.min.js" />
+    <None Include="wwwroot\js\lib\chart-3.6.2.js" />
+    <None Include="wwwroot\js\lib\datatables-1.11.5.js" />
+    <None Include="wwwroot\js\lib\jquery-3.5.1.js" />
     <None Include="wwwroot\js\lib\jquery.blockUI-2.7.js" />
-    <None Include="wwwroot\js\lib\jquery.dataTables-1.10.19.js" />
     <None Include="wwwroot\js\lib\jquery.pjax-2.0.1-bruce.js" />
+    <None Include="wwwroot\js\lib\jquery.simplePagination-1.6-bruce.js" />
     <None Include="wwwroot\js\lib\jquery.validate-1.19.3-bruce.js" />
-    <None Include="wwwroot\js\lib\jquery.validate.unobtrusive-3.2.11.js" />
     <None Include="wwwroot\js\lib\jsplumb-2.15.6.js" />
     <None Include="wwwroot\js\lib\jsplumb-2.15.6.min.js" />
     <None Include="wwwroot\js\lib\modernizr-2.8.3.js" />
     <None Include="wwwroot\js\lib\moment-2.24.js" />
     <None Include="wwwroot\js\lib\mustache-3.1.js" />
-    <None Include="wwwroot\js\lib\summernote-bs4-0.8.18.js" />
+    <None Include="wwwroot\js\lib\summernote-bs5-bruce.js" />
+    <None Include="wwwroot\js\lib\summernote-bs5.min-bruce.js" />
     <None Include="wwwroot\js\my.js" />
     <None Include="wwwroot\js\my.min.js" />
     <None Include="wwwroot\js\summernote-bs4.js.map" />

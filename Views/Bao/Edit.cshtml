@@ -46,7 +46,9 @@
         <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "AppHint", MaxLen = 100 })</td>
         <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "CustHint", MaxLen = 100,  Required = true })</td>
         <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "Answer", MaxLen = 100, Required = true, IsPwd = true })</td>
-        <td width='100px' class='text-center'><a href="javascript:_me.onTestAns(this);">測試答案</a></td>
+        <td width='100px' class='text-center'>
+            <button type="button" class="btn btn-link" onclick="_me.onTestAns(this)">測試答案</button>
+        </td>
         <td width='100px' class='text-center'>@await Component.InvokeAsync("XgDeleteUpDown", new { mName = "_me.mStage" })</td>
     </tr>
 </script>

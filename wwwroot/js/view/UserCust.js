@@ -2,8 +2,8 @@
 
     init: function () {        
         //initial & load row
-        _crud.init();
-        _crud.onUpdate('');
+        _crudR.init();
+        _crudR.onUpdate('');
     },
 
 }; //class
