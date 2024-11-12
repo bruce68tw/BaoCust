@@ -9,7 +9,7 @@ namespace BaoCust.Services
     public static class _XpCode
     {
         #region master table to codes
-        public static async Task<List<IdStrDto>> GetBaos(Db db = null)
+        public static async Task<List<IdStrDto>> GetBaos(Db? db = null)
         {
             //var userId = _Fun.GetBaseUser().UserId;
             var sql = string.Format($@"
@@ -18,13 +18,13 @@ select
 from dbo.Bao
 where Creator='{_Fun.UserId()}'
 order by Id");
-            return await _Db.SqlToCodesA(sql, db);
+            return await BySqlA(sql, db);
 
         }
         #endregion
 
         #region get from XpCode table
-        public static async Task<List<IdStrDto>> GetAuthRangesA(string locale, Db db = null)
+        public static async Task<List<IdStrDto>> GetAuthRangesA(string locale, Db? db = null)
         {
             return await TypeToListA(locale, "AuthRange", db);
         }
@@ -42,7 +42,7 @@ order by Id");
         */
         #endregion
 
-        private static async Task<List<IdStrDto>> TableToListA(string table, Db db = null)
+        private static async Task<List<IdStrDto>> TableToListA(string table, Db? db = null)
         {
             //var userId = _Fun.GetBaseUser().UserId;
             var sql = string.Format($@"
@@ -51,12 +51,12 @@ select
 from dbo.[{table}]
 where Creator='{_Fun.UserId()}'
 order by Id");
-            return await _Db.SqlToCodesA(sql, db);
+            return await BySqlA(sql, db);
         }
 
         /*
         //get codes from sql 
-        private static async Task<List<IdStrDto>> SqlToListAsync(string sql, Db db = null)
+        private static async Task<List<IdStrDto>> SqlToListAsync(string sql, Db? db = null)
         {
             var emptyDb = false;
             _Fun.CheckOpenDb(ref db, ref emptyDb);
@@ -68,7 +68,7 @@ order by Id");
         */
 
         //get code table rows
-        private static async Task<List<IdStrDto>> TypeToListA(string locale, string type, Db db = null)
+        private static async Task<List<IdStrDto>> TypeToListA(string locale, string type, Db? db = null)
         {
             var sql = $@"
 select 
@@ -76,8 +76,14 @@ select
 from dbo.XpCode
 where Type='{type}'
 order by Sort";
-            return await _Db.SqlToCodesA(sql, db);           
+            return await BySqlA(sql, db);           
         }
+
+        public static async Task<List<IdStrDto>> BySqlA(string sql, Db? db = null)
+        {
+            return await _Db.SqlToCodesA(sql, db) ?? new();
+        }
+
         /*
         public static string GetValue(XpCode row, string locale)
         {
@@ -88,7 +94,7 @@ order by Sort";
         */
 
         /*
-        public static List<IdStrExtModel> GetCodeExts(string type, Db db = null)
+        public static List<IdStrExtModel> GetCodeExts(string type, Db? db = null)
         {
             var emptyDb = (db == null);
             if (emptyDb)

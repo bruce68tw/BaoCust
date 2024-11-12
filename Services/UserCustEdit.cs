@@ -3,7 +3,7 @@ using Base.Services;
 
 namespace BaoCust.Services
 {
-    public class UserCustEdit : XgEdit
+    public class UserCustEdit : BaseEditSvc
     {
         public UserCustEdit(string ctrl) : base(ctrl) { }
 

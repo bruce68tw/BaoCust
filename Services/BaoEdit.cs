@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BaoCust.Services
 {
-    public class BaoEdit : XgEdit
+    public class BaoEdit : BaseEditSvc
     {
         public BaoEdit(string ctrl) : base(ctrl) { }
 
@@ -19,7 +19,7 @@ namespace BaoCust.Services
                 //1.設定Bao資料表
                 Table = "dbo.[Bao]",
                 PkeyFid = "Id",
-                Col4 = new string[] { "Creator", "Revised", null, "Revised" },
+                Col4 = new string[] { "Creator", "Revised", "", "Revised" },
                 //2.設定Bao欄位
                 Items = new EitemDto[] 
 				{
@@ -71,7 +71,7 @@ namespace BaoCust.Services
             Md5Answer(json);
             var result = await service.CreateA(json);
             if (_Valid.ResultStatus(result))
-                await _WebFile.SaveCrudFilesA(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
+                await _HttpFile.SaveCrudFilesA(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
             return result;
         }
 
@@ -83,7 +83,7 @@ namespace BaoCust.Services
             Md5Answer(json);
             var result = await service.UpdateA(key, json);
             if (_Valid.ResultStatus(result))
-                await _WebFile.SaveCrudFilesA(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
+                await _HttpFile.SaveCrudFilesA(json, service.GetNewKeyJson(), _Xp.DirStageImage(), t00_FileName, nameof(t00_FileName));
             return result;
         }
 
@@ -100,7 +100,7 @@ namespace BaoCust.Services
                 foreach (var stage in stages)
                 {
                     if (!_Object.IsEmpty(stage[fid]))
-                        stage[fid] = _Str.Md5(stage[fid].ToString());
+                        stage[fid] = _Str.Md5(stage[fid]!.ToString());
                 }
             }
         }

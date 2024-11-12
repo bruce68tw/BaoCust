@@ -14,14 +14,14 @@ namespace BaoCust.Services
         public static string MyVer = _Date.NowSecStr(); //for my.js/css
         public const string LibVer = "20221030b";       //for lib.js/css
 
-        public static string NoImagePath = _Fun.DirRoot + "wwwroot/image/noImage.jpg";
+        //public static string NoImagePath = _Fun.DirRoot + "wwwroot/image/noImage.jpg";
 
         //dir
         //public static string DirUpload = _Fun.DirRoot + "_upload/";
         //public static string DirStage = DirUpload + "Stage/";
 
         //from config file
-        public static XpConfigDto Config;
+        public static XpConfigDto Config = null!;
 
         public static string DirStageImage()
         {
@@ -29,15 +29,15 @@ namespace BaoCust.Services
         }
 
         #region get file content
-        public static async Task<FileResult> ViewStageAsync(string fid, string key, string ext)
+        public static async Task<FileResult?> ViewStageAsync(string fid, string key, string ext)
         {
             return await ViewFileAsync(DirStageImage(), fid, key, ext);
         }
         
-        private static async Task<FileResult> ViewFileAsync(string dir, string fid, string key, string ext)
+        private static async Task<FileResult?> ViewFileAsync(string dir, string fid, string key, string ext)
         {
             var path = $"{dir}{fid}_{key}.{ext}";
-            return await _WebFile.ViewFileA(path, $"{fid}.{ext}");
+            return await _HttpFile.ViewFileA(path, $"{fid}.{ext}");
         }
 
         #endregion

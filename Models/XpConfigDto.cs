@@ -11,7 +11,7 @@
         }
 
         //dir stage image
-        public string DirStageImage { get; set; }
+        public string DirStageImage { get; set; } = "";
 
     }
 }

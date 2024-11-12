@@ -1,6 +1,6 @@
 ﻿using Base.Services;
 using BaseApi.Controllers;
-using BaseWeb.Attributes;
+using BaseApi.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BaoCust.Controllers
 {
     [XgLogin]
-    public class SetPwdController : ApiCtrl
+    public class SetPwdController : BaseCtrl
     {
         public ActionResult Index()
         {

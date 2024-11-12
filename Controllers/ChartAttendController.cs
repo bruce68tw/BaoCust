@@ -1,7 +1,7 @@
 ﻿using Base.Models;
 using Base.Services;
 using BaseApi.Controllers;
-using BaseWeb.Attributes;
+using BaseApi.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BaoCust.Controllers
 {
     [XgLogin]
-    public class ChartAttendController : ApiCtrl
+    public class ChartAttendController : BaseCtrl
     {
         public ActionResult Index()
         {
@@ -17,7 +17,7 @@ namespace BaoCust.Controllers
         }
 
         [HttpPost]
-        public async Task<List<IdNumDto>> GetData()
+        public async Task<List<IdNumDto>?> GetData()
         {
             var sql = $@"
 select 

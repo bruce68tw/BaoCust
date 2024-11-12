@@ -14,6 +14,7 @@ using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 using BaoCust.Models;
+using Base.Interfaces;
 
 namespace BaoCust
 {
@@ -45,7 +46,7 @@ namespace BaoCust
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //3.user info for base component
-            services.AddSingleton<IBaseUserService, MyBaseUserService>();
+            services.AddSingleton<IBaseUserSvc, MyBaseUserService>();
             //services.AddSingleton<IBaseUserService, BaseUserService>();
 
             //4.ado.net for mssql

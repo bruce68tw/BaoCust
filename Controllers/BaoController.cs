@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BaseWeb.Attributes;
+using BaseApi.Attributes;
 
 namespace BaoCust.Controllers
 {
     [XgLogin]
-    public class BaoController : ApiCtrl
+    public class BaoController : BaseCtrl
     {
         public ActionResult Read()
         {
@@ -47,19 +47,19 @@ namespace BaoCust.Controllers
         //TODO: add your code, tSn_fid ex: t03_FileName
         public async Task<JsonResult> Create(string json, List<IFormFile> t00_FileName)
         {
-            return Json(await EditService().CreateAsnyc(_Str.ToJson(json), t00_FileName));
+            return Json(await EditService().CreateAsnyc(_Str.ToJson(json)!, t00_FileName));
         }
 
         [HttpPost]
         //TODO: add your code, tSn_fid ex: t03_FileName
         public async Task<JsonResult> Update(string key, string json, List<IFormFile> t00_FileName)
         {
-            return Json(await EditService().UpdateAsnyc(key, _Str.ToJson(json), t00_FileName));
+            return Json(await EditService().UpdateAsnyc(key, _Str.ToJson(json)!, t00_FileName));
         }
 
         //TODO: add your code
         //get file/image
-        public async Task<FileResult> ViewFile(string table, string fid, string key, string ext)
+        public async Task<FileResult?> ViewFile(string table, string fid, string key, string ext)
         {
             return await _Xp.ViewStageAsync(fid, key, ext);
         }
