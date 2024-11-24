@@ -8,7 +8,7 @@ namespace BaoCust.Services
 {
     public class ChartDailyService
     {
-        public async Task<List<IdNumDto>> GetDataAsync(string baoId)
+        public async Task<List<IdNumDto>> GetDataA(string baoId)
         {
             var sql = @"
 --declare @StartDate date, @EndDate date, @BaoId varchar

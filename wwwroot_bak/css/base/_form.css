@@ -1,0 +1,38 @@
+﻿
+/* form without line */
+/* 停用 xg-row */
+.xg-form {
+    /*font size same to .form-control*/
+    font-size: 16px;
+    border: none;
+    /*margin-bottom: 0px;*/
+}
+
+    /* 停用 xg-row
+    .xg-form .zz_xg-row {
+        margin: 0;
+        border: none;
+    }
+    */
+
+    .xg-form .xg-input {
+        padding-top: 7px;
+        min-height: 43px;
+    }
+    .xg-form.xg-border {
+        margin: 0 auto;
+        padding: 20px 16px;
+        border: solid 1px lightgray !important;
+        border-radius: 6px;
+    }
+
+/* title required sign */
+.xg-required {
+    color: red;
+    font-weight: bold;
+}
+
+/* animation */
+.xg-fade.hide {
+    display: none;
+}

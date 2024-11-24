@@ -19,27 +19,27 @@ namespace BaoCust.Services
                 //1.設定Bao資料表
                 Table = "dbo.[Bao]",
                 PkeyFid = "Id",
-                Col4 = new string[] { "Creator", "Revised", "", "Revised" },
+                //Col4 = ["Creator", "Revised", "", "Revised"],
                 //2.設定Bao欄位
-                Items = new EitemDto[] 
-				{
-					new() { Fid = "Id" },
+                Items =
+                [
+                    new() { Fid = "Id" },
 					new() { Fid = "Name", Required = true },
 					new() { Fid = "StartTime", Required = true },
 					new() { Fid = "EndTime", Required = true },
-                    new() { Fid = "IsBatch" },
+                    new() { Fid = "AnswerType" },
 					new() { Fid = "IsMove" },
-					new() { Fid = "IsMoney" },
-					new() { Fid = "GiftName", Required = true },
+					new() { Fid = "PrizeType" },
+                    new() { Fid = "PrizeNote", Required = true },
 					new() { Fid = "Note" },
 					new() { Fid = "StageCount", Value = 0 },
                     new() { Fid = "Status" },
-                    new() { Fid = "Creator" },
-                    new() { Fid = "Revised" },
-                },
+                    //new() { Fid = "Creator" },
+                    //new() { Fid = "Revised" },
+                ],
                 //3.設定BaoStage
-                Childs = new EditDto[]
-                {
+                Childs =
+                [
                     new()
                     {
                         Table = "dbo.BaoStage",
@@ -47,25 +47,25 @@ namespace BaoCust.Services
                         FkeyFid = "BaoId",
 						OrderBy = "Sort",
                         Col4 = null,
-                        Items = new EitemDto[] 
-						{
-							new() { Fid = "Id" },
+                        Items =
+                        [
+                            new() { Fid = "Id" },
 							new() { Fid = "BaoId" },
 							new() { Fid = "FileName", Required = true },
                             new() { Fid = "AppHint" },
                             new() { Fid = "CustHint" },
                             new() { Fid = "Answer", Required = true },
 							new() { Fid = "Sort", Required = true },
-                        },
+                        ],
                     },
-                },
+                ],
             };
         }
 
         //4.儲存新增記錄
         //TODO: add your code
         //t03_FileName: t + table serial _ + fid
-        public async Task<ResultDto> CreateAsnyc(JObject json, List<IFormFile> t00_FileName)
+        public async Task<ResultDto> CreateA(JObject json, List<IFormFile> t00_FileName)
         {
             var service = EditService();
             Md5Answer(json);
@@ -77,7 +77,7 @@ namespace BaoCust.Services
 
         //TODO: add your code
         //t03_FileName: t + table serial _ + fid
-        public async Task<ResultDto> UpdateAsnyc(string key, JObject json, List<IFormFile> t00_FileName)
+        public async Task<ResultDto> UpdateA(string key, JObject json, List<IFormFile> t00_FileName)
         {
             var service = EditService();
             Md5Answer(json);

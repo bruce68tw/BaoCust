@@ -10,6 +10,25 @@ var _pjax = {
         var docu = $(document);
         docu.pjax('[data-pjax]', boxFt, { type: 'POST' });
 
+		/*
+        //PJAX請求前
+        docu.on('pjax:beforeSend', function (event, xhr, opts) {
+            if (_fun.jwtToken)
+                xhr.setRequestHeader('Authorization', `Bearer ${_fun.jwtToken}`);
+        });
+		*/
+		
+        //'data' 是後端回傳字串, 可能為 HTML 或錯誤訊息
+        docu.on('pjax:success', function (event, data, status, xhr, opts) {
+            var json = _str.toJson(data);
+            if (json != null) {
+                var errMsg = _ajax.resultToErrMsg(json);
+                if (errMsg) {
+                    $(opts.container).html(errMsg);
+                }
+            }
+        });
+
         //when backend exception
         docu.on('pjax:error', function (event, xhr, textStatus, errorThrown, opts) {
             opts.success(xhr.responseText, textStatus, xhr);
@@ -31,7 +50,7 @@ var _pjax = {
             debugger;
         });
         */
-        //選擇性 binding event 
+        //選擇性 binding event
         //xd-bind 只有用在這裡
         //debugger;
         //$('[data-pjax]:not(.xd-bind)').addClass('xd-bind').on('click', function () {
@@ -77,11 +96,11 @@ var _pjax = {
         //    /*
         //    //先載入 JsLib if need
         //    var jsLib = $('#_JsLib').val();
-        //    if (!_str.isEmpty(jsLib)) {
+        //    if (_str.notEmpty(jsLib)) {
         //        $.getScript('../Scripts/' + jsLib + '.js');
         //    }
 
-        //    //如果view包含_JsView這個hidden欄位, 則表示要載入指定的js檔案, 
+        //    //如果view包含_JsView這個hidden欄位, 則表示要載入指定的js檔案,
         //    //否則載入與controller相同名稱的js file
         //    var jsView = $('#_JsView').val();
         //    if (_str.isEmpty(jsView)) {
@@ -95,7 +114,7 @@ var _pjax = {
         //    }
 
         //    //載入 jsView
-        //    if (!_str.isEmpty(jsView)) {
+        //    if (_str.notEmpty(jsView)) {
         //        $.getScript('../Scripts/view/' + jsView + '.js', function (data, textStatus, jqxhr) {
         //            //載入成功後執行 init()
         //            if (typeof (_me) !== 'undefined')

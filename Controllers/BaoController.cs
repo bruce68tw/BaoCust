@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseApi.Attributes;
+using BaoLib.Services;
 
 namespace BaoCust.Controllers
 {
     [XgLogin]
     public class BaoController : BaseCtrl
     {
-        public ActionResult Read()
+        public async Task<ActionResult> Read()
         {
-			//for edit view
-			//ViewBag.GiftTypes = _XpCode.GetGiftTypes();
+            await using (var db = new Db())
+            {
+                ViewBag.AnswerTypes = await _XpLibCode.AnswerTypesA(db);
+                ViewBag.PrizeTypes = await _XpLibCode.PrizeTypesA(db);
+            }
             return View();
         }
 
@@ -47,14 +51,14 @@ namespace BaoCust.Controllers
         //TODO: add your code, tSn_fid ex: t03_FileName
         public async Task<JsonResult> Create(string json, List<IFormFile> t00_FileName)
         {
-            return Json(await EditService().CreateAsnyc(_Str.ToJson(json)!, t00_FileName));
+            return Json(await EditService().CreateA(_Str.ToJson(json)!, t00_FileName));
         }
 
         [HttpPost]
         //TODO: add your code, tSn_fid ex: t03_FileName
         public async Task<JsonResult> Update(string key, string json, List<IFormFile> t00_FileName)
         {
-            return Json(await EditService().UpdateAsnyc(key, _Str.ToJson(json)!, t00_FileName));
+            return Json(await EditService().UpdateA(key, _Str.ToJson(json)!, t00_FileName));
         }
 
         //TODO: add your code

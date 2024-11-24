@@ -76,6 +76,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BaoLib\BaoLib.csproj" />
     <ProjectReference Include="..\Base\BaseWeb\BaseWeb.csproj" />
   </ItemGroup>
 
@@ -153,8 +154,6 @@
     <None Include="wwwroot\js\base\_valid.js" />
     <None Include="wwwroot\js\base\_var.js" />
     <None Include="wwwroot\js\bootstrap.bundle.js.map" />
-    <None Include="wwwroot\js\en-US.js" />
-    <None Include="wwwroot\js\en-US.min.js" />
     <None Include="wwwroot\js\lib.js" />
     <None Include="wwwroot\js\lib.min.js" />
     <None Include="wwwroot\js\lib\bootstrap-datepicker-1.9.js" />
@@ -174,8 +173,6 @@
     <None Include="wwwroot\js\lib\mustache-3.1.js" />
     <None Include="wwwroot\js\lib\summernote-bs5-bruce.js" />
     <None Include="wwwroot\js\lib\summernote-bs5.min-bruce.js" />
-    <None Include="wwwroot\js\my.js" />
-    <None Include="wwwroot\js\my.min.js" />
     <None Include="wwwroot\js\summernote-bs4.js.map" />
     <None Include="wwwroot\js\summernote-bs4.min.js.map" />
     <None Include="wwwroot\js\view\Bao.js" />
@@ -183,10 +180,6 @@
     <None Include="wwwroot\js\view\ChartDaily.js" />
     <None Include="wwwroot\js\view\UserCust.js" />
     <None Include="wwwroot\js\view\_xp.js" />
-    <None Include="wwwroot\js\zh-CN.js" />
-    <None Include="wwwroot\js\zh-CN.min.js" />
-    <None Include="wwwroot\js\zh-TW.js" />
-    <None Include="wwwroot\js\zh-TW.min.js" />
     <None Include="wwwroot\locale\en-US\bootstrap-datepicker.js" />
     <None Include="wwwroot\locale\en-US\validate.j_old" />
     <None Include="wwwroot\locale\en-US\_BR.js" />

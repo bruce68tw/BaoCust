@@ -34,10 +34,39 @@ var _fun = {
 
     //variables ??
     //isCheck: true,
+    init: function (locale) {
+        //set jwt token
+        //_fun.jwtToken = localStorage.getItem('_jwtToken') || '';
+        //localStorage.removeItem('_jwtToken');
+
+        _fun.locale = locale;
+        //initial
+        _leftmenu.init();
+        _pjax.init('.xu-body');
+        _tool.init();
+        moment.locale(_fun.locale);
+    },
+
+    //get header json object for jwt
+    jsonAddJwtHeader: function (json) {
+        if (_fun.jwtToken)
+            json.headers = _fun.getJwtAuth();
+    },
+
+    getJwtAuth: function () {
+        return {
+            'Authorization': _fun.getJwtBearer()
+        };
+    },
+
+    getJwtBearer: function () {
+        return 'Bearer ' + _fun.jwtToken;
+    },
 
     //server need Fun/Hello()
-    onHello: function () {
-        _ajax.getStr('../Fun/Hello', null, function (msg) {
+    //no called
+    onHelloA: async function () {
+        await _ajax.getStrA('../Fun/Hello', null, function (msg) {
             alert(msg);
         });
     },
@@ -83,8 +112,9 @@ var _fun = {
     },
 
     //on change locale, 後端必須實作 Fun/SetLocale()
-    onSetLocale: function (code) {
-        _ajax.getStr('../Fun/SetLocale', { code: code }, function (msg) {
+    //no called
+    onSetLocaleA: async function (code) {
+        await _ajax.getStrA('../Fun/SetLocale', { code: code }, function (msg) {
             //_browser.setLang(lang);
             location.reload();
         });

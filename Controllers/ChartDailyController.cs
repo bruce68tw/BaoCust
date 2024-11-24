@@ -22,7 +22,7 @@ namespace BaoCust.Controllers
         [HttpPost]
         public async Task<List<IdNumDto>> GetData(string id)
         {
-            return await new ChartDailyService().GetDataAsync(id);
+            return await new ChartDailyService().GetDataA(id);
         }
 
     }//class
