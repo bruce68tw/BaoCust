@@ -13,10 +13,10 @@ namespace BaoCust.Services
         {
             ReadSql = $@"
 select b.*, 
-    AnswerTypeName=x.Name,
+    ReplyTypeName=x.Name,
     PrizeTypeName=x2.Name
 from dbo.Bao b
-join dbo.XpCode x on x.Type='{_XpLib.AnswerType}' and b.AnswerType=x.Value
+join dbo.XpCode x on x.Type='{_XpLib.ReplyType}' and b.ReplyType=x.Value
 join dbo.XpCode x2 on x2.Type='{_XpLib.PrizeType}' and b.PrizeType=x2.Value
 where Creator='{_Fun.UserId()}'
 order by Id

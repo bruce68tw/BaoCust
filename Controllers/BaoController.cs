@@ -18,7 +18,7 @@ namespace BaoCust.Controllers
         {
             await using (var db = new Db())
             {
-                ViewBag.AnswerTypes = await _XpLibCode.AnswerTypesA(db);
+                ViewBag.ReplyTypes = await _XpLibCode.ReplyTypesA(db);
                 ViewBag.PrizeTypes = await _XpLibCode.PrizeTypesA(db);
             }
             return View();

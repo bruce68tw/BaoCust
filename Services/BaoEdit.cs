@@ -27,7 +27,7 @@ namespace BaoCust.Services
 					new() { Fid = "Name", Required = true },
 					new() { Fid = "StartTime", Required = true },
 					new() { Fid = "EndTime", Required = true },
-                    new() { Fid = "AnswerType" },
+                    new() { Fid = "ReplyType" },
 					new() { Fid = "IsMove" },
 					new() { Fid = "PrizeType" },
                     new() { Fid = "PrizeNote", Required = true },

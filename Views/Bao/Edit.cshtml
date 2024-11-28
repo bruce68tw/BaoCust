@@ -6,7 +6,7 @@
     @await Component.InvokeAsync("XiDt", new XiDtDto { Title = "結束時間", Fid = "EndTime", Required = true, Cols = "2,4" })
     @await Component.InvokeAsync("XiCheck", new XiCheckDto { Title = "資料狀態", Fid = "Status", Label = "啟用" })
     @await Component.InvokeAsync("XiCheck", new XiCheckDto { Title = "是否移動地點", Fid = "IsMove", Label = "是" })
-    @await Component.InvokeAsync("XiSelect", new XiSelectDto { Title = "答題方式", Fid = "AnswerType", Required = true, Rows = ViewBag.AnswerTypes })
+    @await Component.InvokeAsync("XiSelect", new XiSelectDto { Title = "答題方式", Fid = "ReplyType", Required = true, Rows = ViewBag.ReplyTypes })
     @await Component.InvokeAsync("XiSelect", new XiSelectDto { Title = "獎項種類", Fid = "PrizeType", Required = true, Rows = ViewBag.PrizeTypes })
     @await Component.InvokeAsync("XiText", new XiTextDto { Title = "獎項說明", Fid = "PrizeNote", MaxLen = 100, Required = true })
     @await Component.InvokeAsync("XiTextarea", new XiTextareaDto { Title = "注意事項", Fid = "Note", MaxLen = 500, Cols = "2,6" })
