@@ -106,7 +106,7 @@ var _me = {
             }
 
             //check remote if need
-            _ajax.getStr('CheckAnswer', { id: _me.mStage.getKey(tr), input: input }, function (data) {
+            _ajax.getStrA('CheckAnswer', { id: _me.mStage.getKey(tr), input: input }, function (data) {
                 _tool.msg((data == '1') ? rightMsg : errorMsg);
             });
         });

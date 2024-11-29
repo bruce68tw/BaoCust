@@ -51,7 +51,8 @@ namespace BaoCust.Services
                         [
                             new() { Fid = "Id" },
 							new() { Fid = "BaoId" },
-							new() { Fid = "FileName", Required = true },
+                            new() { Fid = "Name" },
+                            new() { Fid = "FileName", Required = true },
                             new() { Fid = "AppHint" },
                             new() { Fid = "CustHint" },
                             new() { Fid = "Answer", Required = true },

@@ -16,7 +16,7 @@
             _tool.msg('確認新密碼輸入錯誤。');
             return;
         }
-        _ajax.getStr('Save', { oldPwd: oldPwd, newPwd: newPwd }, function (msg) {
+        _ajax.getStrA('Save', { oldPwd: oldPwd, newPwd: newPwd }, function (msg) {
             _tool.msg(msg || '儲存完成。');
         });
     }

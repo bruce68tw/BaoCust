@@ -22,6 +22,7 @@
     <table class="table table-bordered xg-table xg-no-hline" cellspacing="0">
         <thead>
             <tr>
+                <th>關卡名稱</th>
                 @await Component.InvokeAsync("XgTh", new XgThDto { Title = "上傳題目圖檔", Required = true })
                 @await Component.InvokeAsync("XgTh", new XgThDto { Title = "手機App提示", Tip = "顯示在手機App上面的提示" })
                 @await Component.InvokeAsync("XgTh", new XgThDto { Title = "管理人員提示", Tip = "給管理人員的答案提示",  Required = true })
@@ -42,6 +43,7 @@
         @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "BaoId" })
         @await Component.InvokeAsync("XiHide", new XiHideDto { Fid = "Sort" })
 
+        <td width='250px'>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "Name", MaxLen = 30 })</td>
         <td>@await Component.InvokeAsync("XiFile", new XiFileDto { Fid = "FileName", Required = true })</td>
         <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "AppHint", MaxLen = 100 })</td>
         <td>@await Component.InvokeAsync("XiText", new XiTextDto { Fid = "CustHint", MaxLen = 100,  Required = true })</td>

@@ -5,10 +5,12 @@
     /// </summary>
     public class XpConfigDto
     {
+        /*
         //constructor
         public XpConfigDto()
         {
         }
+        */
 
         //dir stage image
         public string DirStageImage { get; set; } = "";
